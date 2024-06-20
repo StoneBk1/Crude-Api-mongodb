@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= findProduct.name %></title>
+    <link rel="stylesheet" href="/styles/single.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= findProduct.name %></h1>
+        <div class="product-details">
+            <h3>Quantity: <%= findProduct.quantity %></h3>
+            <h3>Price: Ksh <%= findProduct.price %></h3>
+        </div>
+        <div class="actions">
+            <a href="/single-product/<%= findProduct._id %>/edit" class="btn edit-btn">Edit The Product</a>
+            <form method="post" action="/delete/<%= findProduct._id %>?_method=DELETE" class="delete-form">
+                <button type="submit" class="btn delete-btn">Delete Product</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

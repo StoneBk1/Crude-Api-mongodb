@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    
+    <div class="form-container">
+        <h1 class="ed">Edit Product</h1>
+        <form method="post" action="/update/<%= findProduct._id  %>?_method=PUT">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required value="<%= findProduct.name %>">
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" required value="<%= findProduct.quantity %>">
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price" required value="<%= findProduct.price %>">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
